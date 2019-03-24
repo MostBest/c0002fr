@@ -1,15 +1,17 @@
 form(id="form" class="form")
 	.form-container
+		.form-container-title Учетная запись
 		.form-row-x
 			.form-cell
 				.input-group
-					input(id="login" class="form__input" name="login" type="text")
+					input(id="login" class="input-field" name="login" type="text")
 					label(for="login" class="input-title") Логин
-
-			.form__row
-				input(id="password" class="form__input" name="password" type="password")
-				label(for="password" class="input-title") Пароль
-
+		.form-row-x
+			.form-cell
+				.input-group
+					input(id="password" class="input" name="password" type="password")
+					label(for="password" class="input-title") Пароль
+		
 			.form__row.form__row-message
 				span.form__message Указан не корректный логин или пароль
 

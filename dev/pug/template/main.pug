@@ -5,13 +5,15 @@ html(lang="ru-Ru")
 	include ../modules/head
 
 	body
-		.wrapper
+		header
+			h1 Шаблон HTML5
+			nav
+		main		
 			//- include ../modules/header
 			.grid-container
 				block content
 				include ../modules/form
 			//- include ../modules/footer
-
+		footer
 		script(src="static/js/main.js")
 		block script
-	
