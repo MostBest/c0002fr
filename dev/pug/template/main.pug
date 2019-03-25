@@ -6,14 +6,16 @@ html(lang="ru-Ru")
 
 	body
 		header
-			h1 Шаблон HTML5
-			nav
+			.container
+				h1 Шаблон HTML5
+				nav
 		main
 			//- include ../modules/header
-			.grid-container
+			.container
 				block content
 				include ../modules/form
 			//- include ../modules/footer
 		footer
-		script(src="static/js/main.js")
+		script(src="assets/js/libs.min.js")
+		script(src="assets/js/main.js")
 		block script

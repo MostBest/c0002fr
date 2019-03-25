@@ -1,20 +1,21 @@
 form(id="form" class="form")
-	.form-container
-		.form-container-title Учетная запись
+	section.form-container
+		header.form-container-title 
+			span Учетная запись
 		.form-row-x
 			.form-cell
 				.input-group
-					input(id="login" class="input-field" name="login" type="text")
+					input(id="login" class="input-field" name="login" type="text" autocomplete="off")
 					label(for="login" class="input-title") Логин
 		.form-row-x
 			.form-cell
 				.input-group
-					input(id="password" class="input" name="password" type="password")
+					input(id="password" class="input-field" name="password" type="password")
 					label(for="password" class="input-title") Пароль
 		
-			.form__row.form__row-message
-				span.form__message Указан не корректный логин или пароль
+		.form-row-x
+			span.form-message.error Указан не корректный логин или пароль
 
-			.form__row.form__row-double
-				button(id="submit-modal-1" class="form__button btn" type="submit") Войти
-				a(href="" class="remove-password") Забыли пароль?
+		.form-row-x-between
+			input(id="submit-modal-1" class="input-submit" type="submit" value="Войти")
+			a(href="" class="remove-password") Забыли пароль?

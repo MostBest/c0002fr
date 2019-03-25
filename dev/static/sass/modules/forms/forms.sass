@@ -8,42 +8,53 @@ textarea
 	font-size: 1.5rem
 	font-weight: 300
 
-.form 
-	padding: 20px 0
-
 .form-container
 	position: relative
-	margin: 0 auto
-	max-width: $form-widht // что делать если 2 формы и нужно две разные ширины
-	padding: 30px 20px
-	border: 1px solid #bdbfc1 // можно будет удалить
+	max-width: $form-width // что делать если 2 формы и нужно две разные ширины
+	margin: 20px auto
+	padding-left: 20px
+	padding-right: 20px
+	padding-bottom: 18px
+	border: 1px solid #bdbfc1 // удалить
+	border-radius: 3px // удалить
 
 .form-container-title
-	padding: 0 10px
-	position: absolute
 	font-size: .8rem
 	color: #999
 	text-transform: uppercase
-	top: -8px
-	// left: 10px
-	// right: 15px
-	display: inline 
-	background: #fff
+	padding-bottom: 10px
+	text-align: $form-title-posititon 
+	span
+		background: #fff
+		padding: 0 10px
+		position: relative
+		top: -8px
 
 .form-row-x
+	flex-basis: 100%
 	display: flex
-	flex-flow: row wrap // узнать что это
+	flex-flow: row wrap
 
 .form-cell
-	flex: 0 0 auto // узнать что это 
+	flex-basis: 100%
 	min-height: 0px
 	min-width: 0px
-	width: 100%
 
 .input-group
 	margin-bottom: 18px
 	position: relative
 	width: 100%
+
+.input-title 
+	padding: 0 10px
+	position: absolute
+	font-size: .8rem 
+	font-family: $font-light
+	color: #999
+	text-transform: lowercase
+	top: -8px
+	left: 10px
+	background: #fff
 
 .input-field 
 	border: 1px solid #e2e2e2 // сделать переменной?
@@ -52,27 +63,16 @@ textarea
 	box-shadow: 0 3px 0 transparent
 	transition: background .3s, box-shadow .3s, border-color .3s
 
-.input-title 
-	padding: 0 10px
-	position: absolute
-	font-size: 11px
-	line-height: 13px
-	color: #999
-	text-transform: lowercase
-	top: -8px
-	left: 10px
-	background: #fff
-
-.form-row-x-between 
+.form-row-x-between
+	width: 100%
 	display: flex
 	justify-content: space-between
 	align-items: center // скорее всего нужно вынести в отдельный класс
 
-
-.input-error 
+.error 
 	border-bottom-color: rgba(232,125,125, .42) !important
 
-.form__input:-webkit-autofill 
+.input-field:-webkit-autofill 
 	-webkit-box-shadow: inset 0 0 0 50px #fff !important
 	-webkit-text-fill-color: #1f2530
 
@@ -85,34 +85,36 @@ textarea
 	bottom: 4px
 	right: 10px
 
-.form__input:focus 
+.input-field:focus 
 	border-bottom-color: #05a
 
-.form__row-message 
+.form-message
+	width: 100%
 	text-align: center
-
-.form__message 
+	margin-top: -8px
+	padding-bottom: 10px
 	color: #fff
-	font-size: 13px
+	font-size: 12px
 	transition: color .3s
-
-.form__message-error 
-	color: #efa2a2
+	&.error
+		color: #efa2a2
 
 .remove-password 
 	color: #0055aa
 
-.form__button 
+.input-submit
+	// font-family: $font-light
 	border: none
 	color: #fff
-	padding: 15px 40px
+	padding: .9rem 2.8rem
 	background-color: #004080
 	max-width: 150px
 	text-align: center
 	cursor: pointer
 	transition: .3s
+	font-size: 1.2rem
 	text-transform: uppercase
 	outline:none
 
-.form__button:hover 
+.input-submit:hover 
 	background-color: #05a
