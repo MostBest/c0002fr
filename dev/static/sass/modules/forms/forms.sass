@@ -57,11 +57,14 @@ textarea
 	background: #fff
 
 .input-field 
-	border: 1px solid #e2e2e2 // сделать переменной?
+	border: 1px solid #bdbfc1 // сделать переменной?
 	padding: 19px 20px // сделать зависимыми от размера экрана
 	color: #1f2530 !important
 	box-shadow: 0 3px 0 transparent
 	transition: background .3s, box-shadow .3s, border-color .3s
+
+.input-field[name="password"]
+	padding-right: 70px
 
 .form-row-x-between
 	width: 100%
@@ -102,8 +105,35 @@ textarea
 .remove-password 
 	color: #0055aa
 
+.show-password.disabled
+	display: none
+
+.show-password
+	padding: 16px
+	background: none
+	border: none
+	border-left: 1px solid #bdbfc1
+	position: absolute
+	top: 0
+	right: 0
+	height: 100%
+	width: 64px
+	display: flex
+	align-items: center
+	justify-content: center
+	cursor: pointer
+
+.i-eye
+	fill: #444
+	width: 32px
+
+.input-submit.disabled
+	opacity: .2
+	cursor: auto
+	&:hover
+		background-color: #004080 !important
+
 .input-submit
-	// font-family: $font-light
 	border: none
 	color: #fff
 	padding: .9rem 2.8rem
@@ -115,6 +145,5 @@ textarea
 	font-size: 1.2rem
 	text-transform: uppercase
 	outline:none
-
-.input-submit:hover 
-	background-color: #05a
+	&:hover 
+		background-color: #05a
