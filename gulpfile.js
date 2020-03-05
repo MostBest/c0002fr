@@ -2,60 +2,28 @@
 
 const { src, dest, parallel } = require('gulp');
 const pug 										= require('gulp-pug');
-const sass 										= require('gulp-pug');
+const sass 										= require('gulp-sass');
+// const concat 									= require('gulp-concat');
 
 function html() {
-	return src('src/html/*.pug')
+	return src('dev/html/*.pug')
 		.pipe(pug())
 		.pipe(dest('build/html'))
 }
 
-// global.$ = {
-// 	paths: 		{
-// 		tasks: require('./gulp/config/tasks.js')
-// 	},
-// 	gulp: 	require('gulp'),
-// 	gp: 		require('gulp-load-plugins')(),
-// 	bs: 		require('browser-sync').create()
-// };
-//
-// $.paths.tasks.forEach(function (taskPath) {
-// 	require(taskPath)();
-// });
+function css() {
+	return src('dev/css/*.sass')
+		.pipe(sass())
+		.pipe(dest('build/css'))
+}
 
-// script 			- статичный js фаил с настройками
-// newer 				- фильтр, не пропускает из потока уже существующие файлы
-// notify 			- выводит уведомления об ошибках
-// sourcemaps 	- добавляет пометки с именами исходников в выходной файл
+function js() {
+  return src('dev/js/*.js')
+    .pipe(dest('build/js'))
+		.pipe(dest('build/js'))
+}
 
-// $.gulp.task('default', $.gulp.series(
-// 	$.gulp.parallel(
-// 		'pug',
-// 		'style:lib',
-// 		'sass',
-// 		'script:lib',
-// 		'script',
-// 		'img:dev'
-// 	),
-// 	$.gulp.parallel(
-// 		'watch',
-// 		'serve'
-// 	)
-// ));
-//
-// $.gulp.task('build', $.gulp.series(
-// 	$.gulp.parallel(
-// 		'pug',
-// 		'style:lib',
-// 		'sass',
-// 		'script:lib',
-// 		'script',
-// 		'img:build'
-// 	),
-// 	$.gulp.parallel(
-// 		'serve'
-// 	)
-// ));
-
+exports.js 			= js;
+exports.css 		= css;
 exports.html 		= html;
-exports.default	= parallel(html);
+exports.default	= parallel(html, css, js);
