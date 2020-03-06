@@ -1,3 +1,11 @@
+'use strict';
+
+function l(param) {
+	console.log( param );
+}
+
+l('Hello World!');
+
 // jQuery старт
 $(document).ready(function(){
 
@@ -27,7 +35,7 @@ function printError() {
 			if ( $('.password-error').length == 0 ) {
 				setTimeout(function(){
 					$(errorMessage.password).insertAfter(password);
-				}, 200);			
+				}, 200);
 			}
 		default:
 			passwordControl();
