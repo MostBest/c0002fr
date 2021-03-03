@@ -37,7 +37,7 @@
     "gulp-tinypng": "^1.0.2",
     "gulp-uglify": "^3.0.2",
     "npm-check-updates": "^4.0.3",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "vinyl-ftp": "^0.6.1"
   },
   "optionalDependencies": {}
